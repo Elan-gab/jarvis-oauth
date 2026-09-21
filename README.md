@@ -12,11 +12,10 @@ O bot acessa **apenas** os dados que o usuário autorizar na tela de consentimen
 
 Não solicitamos acesso a Gmail, Drive ou outros serviços Google neste fluxo.
 
-## Política de Privacidade
+## Política de Privacidade e Termos
 
-Consulte [PRIVACY.md](PRIVACY.md) neste repositório.
-
-URL canônica: https://github.com/Elan-gab/jarvis-oauth/blob/main/PRIVACY.md
+- Privacidade: [PRIVACY.md](PRIVACY.md) — https://github.com/Elan-gab/jarvis-oauth/blob/main/PRIVACY.md
+- Termos: [TERMS.md](TERMS.md) — https://github.com/Elan-gab/jarvis-oauth/blob/main/TERMS.md
 
 ## Contato
 
