@@ -14,8 +14,10 @@ Não solicitamos acesso a Gmail, Drive ou outros serviços Google neste fluxo.
 
 ## Política de Privacidade e Termos
 
-- Privacidade: [PRIVACY.md](PRIVACY.md) — https://github.com/Elan-gab/jarvis-oauth/blob/main/PRIVACY.md
-- Termos: [TERMS.md](TERMS.md) — https://github.com/Elan-gab/jarvis-oauth/blob/main/TERMS.md
+- Homepage (OAuth / verificação Google): https://elan-gab.github.io/jarvis-oauth/
+- Privacidade: https://elan-gab.github.io/jarvis-oauth/privacy.html
+- Termos: https://elan-gab.github.io/jarvis-oauth/terms.html
+- Fonte: [PRIVACY.md](PRIVACY.md), [TERMS.md](TERMS.md)
 
 ## Contato
 
