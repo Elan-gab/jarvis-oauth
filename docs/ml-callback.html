@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jarvis — Mercado Livre OAuth</title>
+  <style>
+    :root { color-scheme: light dark; font-family: system-ui, sans-serif; }
+    body { margin: 0; padding: 1.25rem; line-height: 1.5; max-width: 40rem; }
+    h1 { font-size: 1.25rem; margin: 0 0 1rem; }
+    .box {
+      background: #f4f4f5;
+      border: 1px solid #d4d4d8;
+      border-radius: 8px;
+      padding: 1rem;
+      word-break: break-all;
+      font-family: ui-monospace, monospace;
+      font-size: 0.95rem;
+    }
+    @media (prefers-color-scheme: dark) {
+      .box { background: #18181b; border-color: #3f3f46; }
+    }
+    button {
+      margin-top: 1rem;
+      padding: 0.65rem 1rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 0;
+      background: #2563eb;
+      color: #fff;
+      cursor: pointer;
+    }
+    button:active { opacity: 0.85; }
+    .hint { color: #71717a; font-size: 0.9rem; margin-top: 1rem; }
+    .ok { color: #16a34a; }
+    .err { color: #dc2626; }
+  </style>
+</head>
+<body>
+  <h1>Mercado Livre — autorização Jarvis</h1>
+  <p id="status">Lendo código da URL…</p>
+  <div id="codeBox" class="box" hidden></div>
+  <button id="copyBtn" type="button" hidden>Copiar código</button>
+  <p class="hint">Cole o código no WhatsApp para o Jarvis gravar o token.</p>
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var code = params.get("code");
+      var error = params.get("error");
+      var status = document.getElementById("status");
+      var box = document.getElementById("codeBox");
+      var btn = document.getElementById("copyBtn");
+
+      if (error) {
+        status.innerHTML = '<span class="err">Erro: ' + error + '</span>';
+        return;
+      }
+      if (!code) {
+        status.innerHTML = '<span class="err">Nenhum código na URL. Abra o link de autorização do Mercado Livre.</span>';
+        return;
+      }
+
+      status.innerHTML = '<span class="ok">Código recebido. Copie e mande no Zap:</span>';
+      box.hidden = false;
+      box.textContent = code;
+      btn.hidden = false;
+      btn.addEventListener("click", function () {
+        navigator.clipboard.writeText(code).then(function () {
+          btn.textContent = "Copiado!";
+        }).catch(function () {
+          btn.textContent = "Selecione e copie manualmente";
+        });
+      });
+    })();
+  </script>
+</body>
+</html>

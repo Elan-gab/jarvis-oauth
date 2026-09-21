@@ -31,3 +31,12 @@ Você pode revogar a autorização a qualquer momento em:
 **Conta Google → Segurança → Conexões com apps de terceiros**
 
 Ou diretamente em: https://myaccount.google.com/permissions
+
+## Mercado Livre (OAuth redirect / webhook)
+
+Páginas estáticas para cadastro no painel de desenvolvedor do Mercado Livre:
+
+- **Redirect URI:** https://elan-gab.github.io/jarvis-oauth/ml-callback.html
+- **Webhook (cadastro):** https://elan-gab.github.io/jarvis-oauth/ml-webhook.html
+
+Após autorizar no ML, a página de callback exibe o `code` para colar no Jarvis.
