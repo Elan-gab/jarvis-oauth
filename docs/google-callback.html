@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Google Calendar — Jarvis</title>
+  <style>
+    :root { color-scheme: light dark; font-family: system-ui, sans-serif; }
+    body { margin: 0; padding: 1.25rem; line-height: 1.5; max-width: 40rem; }
+    h1 { font-size: 1.25rem; margin: 0 0 1rem; }
+    .hint { color: #71717a; font-size: 0.9rem; margin-top: 1rem; }
+    .ok { color: #16a34a; }
+    .err { color: #dc2626; }
+    a.btn {
+      display: inline-block;
+      margin-top: 0.75rem;
+      padding: 0.65rem 1rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      background: #2563eb;
+      color: #fff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>Google Calendar — Jarvis</h1>
+  <p id="status">Conectando ao Jarvis…</p>
+  <p id="fallback" class="hint" hidden>
+    Se nada acontecer em alguns segundos, volte à aba do Jarvis no Safari
+    (link que você abriu antes de autorizar) e toque em <em>Conectar Calendar</em>.
+  </p>
+  <script>
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var code = params.get("code");
+      var state = params.get("state");
+      var error = params.get("error");
+      var status = document.getElementById("status");
+      var fallback = document.getElementById("fallback");
+
+      if (error) {
+        status.innerHTML = '<span class="err">Erro do Google: ' + error + '</span>';
+        return;
+      }
+      if (!code || !state) {
+        status.innerHTML = '<span class="err">URL sem código de autorização. Abra o link do Jarvis no celular e tente de novo.</span>';
+        return;
+      }
+
+      var gateway = "";
+      var pipe = state.indexOf("|");
+      if (pipe > 0) {
+        gateway = state.slice(pipe + 1);
+      }
+      if (!gateway || gateway.indexOf("://") < 0) {
+        status.innerHTML = '<span class="err">Sessão antiga ou inválida. Gere um novo link com <code>calendar-auth-start</code> e abra no celular.</span>';
+        return;
+      }
+
+      fallback.hidden = false;
+      var relay = gateway.replace(/\/$/, "") + "/oauth/google/relay"
+        + "?code=" + encodeURIComponent(code)
+        + "&state=" + encodeURIComponent(state);
+      window.location.replace(relay);
+    })();
+  </script>
+</body>
+</html>
