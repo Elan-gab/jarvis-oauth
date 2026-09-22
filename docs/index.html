@@ -3,13 +3,15 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="google-site-verification" content="ttSpG4sQKMsIVDdPPZPELpB0A99G0fKZYUw7AndliFE" />
-  <title>Jarvis — assistente pessoal</title>
+  <meta name="google-site-verification" content="ttSpG4sQKMsIVDdPPZPELpB0A99G0fKZYUw7AndliFE">
+  <title>Jarvis — aplicativo de assistente pessoal</title>
   <style>
-    :root { color-scheme: light dark; font-family: system-ui, sans-serif; line-height: 1.5; }
-    body { margin: 0 auto; padding: 1.25rem; max-width: 40rem; }
-    h1 { font-size: 1.4rem; }
+    :root { color-scheme: light dark; font-family: system-ui, sans-serif; line-height: 1.55; }
+    body { margin: 0 auto; padding: 1.25rem; max-width: 42rem; }
+    h1 { font-size: 1.75rem; margin-bottom: 0.25rem; }
+    h2 { font-size: 1.1rem; margin-top: 1.5rem; }
     a { color: #2563eb; }
+    nav { margin: 1.25rem 0; }
     nav a { margin-right: 1rem; }
     p, li { color: #52525b; }
     @media (prefers-color-scheme: dark) { p, li { color: #a1a1aa; } }
@@ -17,8 +19,29 @@
 </head>
 <body>
   <h1>Jarvis</h1>
-  <p>Assistente pessoal via WhatsApp, operado por <strong>Elan-gab</strong>. Uso privado — não é produto público.</p>
-  <p>Com sua autorização OAuth, o Jarvis acessa o <strong>Google Calendar</strong> para criar, listar e atualizar eventos conforme você pede no WhatsApp. Não acessa Gmail, Drive nem outros serviços Google.</p>
+  <p><strong>Nome do aplicativo:</strong> Jarvis</p>
+
+  <h2>Finalidade do aplicativo</h2>
+  <p>
+    <strong>Jarvis</strong> é um assistente pessoal via WhatsApp, operado por Elan-gab.
+    O aplicativo ajuda o usuário a organizar compromissos pedindo eventos na conversa
+    e sincronizando com o <strong>Google Calendar</strong> quando o usuário autoriza.
+  </p>
+  <p>Com consentimento OAuth, o Jarvis pode:</p>
+  <ul>
+    <li>criar eventos e tarefas na Agenda Google;</li>
+    <li>listar compromissos em um período;</li>
+    <li>atualizar ou remover eventos conforme pedidos no WhatsApp.</li>
+  </ul>
+  <p>
+    O Jarvis <strong>não</strong> é um produto comercial aberto ao público.
+    O uso é pessoal e privado. Não solicitamos Gmail, Google Drive nem outros
+    serviços Google neste fluxo — apenas Calendar (<code>calendar.events</code>).
+  </p>
+
+  <h2>Operador e contato</h2>
+  <p>Operado por Elan-gab. Dúvidas e privacidade: GitHub Issues (link abaixo).</p>
+
   <nav>
     <a href="https://elan-gab.github.io/jarvis-oauth/privacy.html">Política de privacidade</a>
     <a href="https://elan-gab.github.io/jarvis-oauth/terms.html">Termos de serviço</a>
