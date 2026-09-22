@@ -1,43 +1,38 @@
 # Jarvis
 
-Jarvis é um assistente pessoal via WhatsApp que, com **autorização explícita** do usuário, acessa o **Google Calendar** para criar e consultar eventos e tarefas a pedido.
+**Nome do aplicativo:** Jarvis
 
-## Sobre este projeto
+## Finalidade do aplicativo
 
-Jarvis **não** é um produto comercial aberto ao público. A integração OAuth com o Google existe para permitir que o operador do bot use a **própria conta Google** de forma controlada e transparente, conforme exigido pela política de dados do Google.
+**Jarvis** é um assistente pessoal via WhatsApp, operado por Elan-gab. O aplicativo
+ajuda o usuário a organizar compromissos pedindo eventos na conversa e sincronizando
+com o **Google Calendar** quando o usuário autoriza.
 
-## Dados acessados
+Com consentimento OAuth, o Jarvis pode:
 
-O bot acessa **apenas** os dados que o usuário autorizar na tela de consentimento OAuth — neste fluxo, escopos relacionados ao **Google Calendar** (criar, listar e atualizar eventos conforme os pedidos feitos no WhatsApp).
+- criar eventos e tarefas na Agenda Google;
+- listar compromissos em um período;
+- atualizar ou remover eventos conforme pedidos no WhatsApp.
 
-Não solicitamos acesso a Gmail, Drive ou outros serviços Google neste fluxo.
+O Jarvis **não** é um produto comercial aberto ao público. Uso pessoal e privado.
+Não solicitamos Gmail, Google Drive nem outros serviços Google — apenas Calendar
+(`calendar.events`).
 
 ## Política de Privacidade e Termos
 
-- Homepage (OAuth / verificação Google): https://elan-gab.github.io/jarvis-oauth/
-- Privacidade: https://elan-gab.github.io/jarvis-oauth/privacy.html
-- Termos: https://elan-gab.github.io/jarvis-oauth/terms.html
-- Fonte: [PRIVACY.md](PRIVACY.md), [TERMS.md](TERMS.md)
+- [Política de Privacidade](PRIVACY.md) — URL canônica: https://github.com/Elan-gab/jarvis-oauth/blob/main/PRIVACY.md
+- [Termos de Serviço](TERMS.md) — https://github.com/Elan-gab/jarvis-oauth/blob/main/TERMS.md
+- Homepage (GitHub Pages): https://elan-gab.github.io/jarvis-oauth/
 
 ## Contato
 
-Para dúvidas, solicitações ou pedidos relacionados a privacidade, abra uma **Issue** em:
-
-https://github.com/Elan-gab/jarvis-oauth/issues
+Dúvidas ou privacidade: [GitHub Issues](https://github.com/Elan-gab/jarvis-oauth/issues)
 
 ## Como revogar o acesso
 
-Você pode revogar a autorização a qualquer momento em:
+Revogue em https://myaccount.google.com/permissions ou em **Conta Google → Segurança → Conexões com apps de terceiros**.
 
-**Conta Google → Segurança → Conexões com apps de terceiros**
+## Mercado Livre (redirect OAuth)
 
-Ou diretamente em: https://myaccount.google.com/permissions
-
-## Mercado Livre (OAuth redirect / webhook)
-
-Páginas estáticas para cadastro no painel de desenvolvedor do Mercado Livre:
-
-- **Redirect URI:** https://elan-gab.github.io/jarvis-oauth/ml-callback.html
-- **Webhook (cadastro):** https://elan-gab.github.io/jarvis-oauth/ml-webhook.html
-
-Após autorizar no ML, a página de callback exibe o `code` para colar no Jarvis.
+- Redirect: https://elan-gab.github.io/jarvis-oauth/ml-callback.html
+- Webhook: https://elan-gab.github.io/jarvis-oauth/ml-webhook.html
